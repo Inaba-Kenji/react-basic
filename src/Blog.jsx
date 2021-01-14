@@ -2,6 +2,7 @@ import React from 'react';
 import Article from "./Article";
 import * as FooBar from "./components/FooBar";
 import Hoge from "./components/Hoge";
+import LikeButton from './LikeButton';
 
 const Blog = () => {
 
@@ -42,9 +43,11 @@ const Blog = () => {
         <Article
         　　　　　title={"Reactの使い方"}
         />
+        <LikeButton/>
         <FooBar.Bar/>
         <FooBar.Foo/>
         <Hoge/>
+        
       </>
     );
 }
