@@ -1,24 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
+// import LikeButton from "./LikeButton";
 
 const Article = (props) => {
-
-  let publishState = "";
-
-  if (props.inPublished) {
-    publishState = "公開"
-  } else {
-    publishState = "非公開"
-  }
+  const [isPublished, togglePublished] = useState(false);
 
   return (
     <div>
       <h2>{props.title}</h2>
-      <p>順位は{props.order}位</p>
-      <p>{props.author}</p>
-      <p>{publishState}</p>
+      <label htmlFor="check">公開状態:</label>
+      <input type="checkbox" checked={isPublished} id="check" onClick={() => togglePublished(!isPublished)}/>
     </div>
   )
-
 };
 
 export default Article;
